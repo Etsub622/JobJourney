@@ -3,6 +3,9 @@ import mongoose from "mongoose";
 import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import parentRoutes from "./routes/parentRoutes.js"; 
+import tutorRoutes from "./routes/tutorRoutes.js"
+
 dotenv.config();
 
 
@@ -24,10 +27,10 @@ app.use(cors({
   credentials:true
 }));
 
-// app.use("/",router)
-app.get("/", (req, res) => {
-    res.send("i am working properly")
-})
+app.use("/api/Parent",parentRoutes)
+app.use("/api/tutor", tutorRoutes)
+
+
 app.listen(process.env.PORT, () => {
-    console.log(`server is running on port${process.env.PORT}`)
+    console.log(`server is running on port ${process.env.PORT}`)
 })

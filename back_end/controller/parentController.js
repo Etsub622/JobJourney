@@ -1,7 +1,7 @@
-import { Parent } from "../models/parent";
+import { Parent } from "../models/parent.js";
 import bcrypt from "bcrypt";
 
-t
+
 const registerParent = async (req, res) => {
     try {
         const { FullName, Email, PhoneNumber, Password } = req.body;
